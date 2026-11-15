@@ -2400,6 +2400,8 @@ if (conn && (conn.saveData || conn.effectiveType === "2g")) {
         let currentCodeLabTier = "basic";
 
         function switchDrawerTab(tabName) {
+            const body = document.getElementById("drawerBodyContent");
+            if (body) body.scrollTop = 0;
             currentDrawerTab = tabName;
             document.querySelectorAll(".drawer-tab-btn").forEach(btn => {
                 const isCurrent = btn.id === `tabBtn-${tabName}`;
